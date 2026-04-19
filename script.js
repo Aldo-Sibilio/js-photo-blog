@@ -16,3 +16,17 @@ fetch(apiUrl)
     // converto la risposta in JSON
     return response.json();
   })
+
+  .then(function (pictures) {
+
+    // stampo in console i dati ricevuti per verificare che siano corretti
+    console.log("Dati ricevuti:", pictures);
+
+    // ciclo su ogni foto e creo la card corrispondente
+    pictures.forEach(function (picture) {
+
+      // creo la card e la aggiungo alla bacheca
+      const card = createCard(picture);
+      cardsContainer.appendChild(card);
+    });
+  })

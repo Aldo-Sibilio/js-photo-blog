@@ -41,3 +41,25 @@ fetch(apiUrl)
     .finally(function () {
         console.log("Chiamata API terminata.");
     });
+    
+// funzione che crea una singola card e la restituisce come elemento HTML
+function createCard(picture) {
+
+    // creo il div della card
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    // inserisco il contenuto HTML della card con i dati dell'API
+    card.innerHTML = `
+    <div class="pin">
+      <img src="assets/pin.svg" alt="pin" />
+    </div>
+    <div class="photo">
+      <img src="${picture.url}" alt="${picture.title}" />
+    </div>
+    <p class="card-title">${picture.title}</p>
+    <p class="card-date">${picture.date}</p>
+  `;
+
+    return card;
+}

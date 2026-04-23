@@ -52,7 +52,7 @@ function createCard(picture) {
     // inserisco il contenuto HTML della card con i dati dell'API
     card.innerHTML = `
     <div class="pin">
-      <img src="assets/pin.svg" alt="pin" />
+      <img src="img/pin.svg" alt="pin" />
     </div>
     <div class="photo">
       <img src="${picture.url}" alt="${picture.title}" />
